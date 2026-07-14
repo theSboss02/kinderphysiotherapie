@@ -19,7 +19,7 @@
   --portrait-width: 265px;
   --portrait-mobile-width: 225px;
   --portrait-aspect: 3 / 4;
-  --portrait-border-width: 10px; /* 0 = Portrait-Rahmen ausblenden */
+  --portrait-border-width: 5px; /* 0 = Portrait-Rahmen ausblenden */
   --portrait-border-color: var(--sage-soft); /* transparent = Rahmenfarbe ausblenden */
   --radius:22px;
 
