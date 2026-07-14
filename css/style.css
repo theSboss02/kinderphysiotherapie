@@ -348,8 +348,7 @@ li{ margin:0 0 8px; }
   max-width: 100%;
   aspect-ratio: var(--portrait-aspect);
   overflow: hidden;
-  clip-path: ellipse(50% 50% at 50% 50%);
-  border-radius: 50%;
+  border-radius: 24px;
   border: var(--portrait-border-width) solid var(--portrait-border-color);
   box-shadow: 0 18px 42px rgba(29,29,27,.12);
   background: rgba(0,0,0,.03);
@@ -360,8 +359,8 @@ li{ margin:0 0 8px; }
      Zoom: 1 = normal, 1.1 = 10 Prozent groesser
      X: positive Werte nach rechts, negative nach links
      Y: positive Werte nach unten, negative nach oben */
-  --bild-zoom: 1.4;
-  --bild-x: 35px;
+  --bild-zoom: 1;
+  --bild-x: 0px;
   --bild-y: 0px;
 
   display: block;
