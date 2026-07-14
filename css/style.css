@@ -16,6 +16,9 @@
   --accent-soft: rgba(178, 91, 91, 0.25);
   --accent-border: rgba(223,170,150,.32);
   --sage-soft: rgba(190,211,205,.28);
+  --portrait-width: 265px;
+  --portrait-mobile-width: 225px;
+  --portrait-aspect: 3 / 4;
   --portrait-border-width: 10px; /* 0 = Portrait-Rahmen ausblenden */
   --portrait-border-color: var(--sage-soft); /* transparent = Rahmenfarbe ausblenden */
   --radius:22px;
@@ -340,15 +343,32 @@ li{ margin:0 0 8px; }
 }
 
 
-.portrait{
-  width: 255px;
+.portrait-frame{
+  width: var(--portrait-width);
   max-width: 100%;
-  aspect-ratio: 1/1;
-  object-fit: cover;
-  border-radius: 999px;
+  aspect-ratio: var(--portrait-aspect);
+  overflow: hidden;
+  clip-path: ellipse(50% 50% at 50% 50%);
+  border-radius: 50%;
   border: var(--portrait-border-width) solid var(--portrait-border-color);
   box-shadow: 0 18px 42px rgba(29,29,27,.12);
   background: rgba(0,0,0,.03);
+}
+
+.portrait{
+  /* BILD HIER EINSTELLEN:
+     Zoom: 1 = normal, 1.1 = 10 Prozent groesser
+     X: positive Werte nach rechts, negative nach links
+     Y: positive Werte nach unten, negative nach oben */
+  --bild-zoom: 1.4;
+  --bild-x: 35px;
+  --bild-y: 0px;
+
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(var(--bild-x), var(--bild-y)) scale(var(--bild-zoom));
 }
 
 .portrait-note{
@@ -579,7 +599,7 @@ li{ margin:0 0 8px; }
     margin-top: 20px;
     margin-bottom: 20px;
   }
-  .portrait{ transform: none; }
+  .portrait-frame{ transform: translateX(8px); }
   .about-block{
     padding: 28px 0 22px;
   }
@@ -603,7 +623,7 @@ li{ margin:0 0 8px; }
   .btn{ width: 100%; }
   .cta-row{ width: 100%; }
   .hero-media{ padding: 22px 18px 18px; }
-  .portrait{ width: 220px; }
+  .portrait-frame{ width: var(--portrait-mobile-width); }
 }
 
 /* Timeline-Layout fuer Ausbildung */
